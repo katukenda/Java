@@ -1,0 +1,106 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab_4;
+
+/**
+ *
+ * @author 174072r
+ */
+public class Recursive {
+     public static void main(String[] args) {
+   
+      Recu x =new Recu();
+      int ans = x.sum(5);
+      int ans2= x.mul(5);
+      int ans3= x.mul2(5,6);
+       int ans4= x.feb(8);
+       
+      
+        System.out.println("Answer is "+ans);
+         System.out.println("Answer of milti up to "+ans2);
+           System.out.println("Answer of multi 2 "+ans3);
+            System.out.println("Answer of feb "+ans4);
+            
+           x.SolveHanoi(6,'A','B','C');
+        
+        
+      
+        
+    }
+    
+}
+
+
+    
+    class Recu{
+        
+ int sum(int no){
+        
+        if(no==1){
+        return 1;
+        }
+        
+        else{
+        return no+sum(no-1);}
+    }
+ 
+
+ int mul(int no){
+ if(no==0){
+ return 1;
+ }
+ 
+ else{
+ return no*mul(no-1);
+ }
+ }
+ 
+ 
+ 
+ int mul2(int a, int b){
+ 
+ if(a==1){
+ return b;}
+ 
+ else{
+ return mul2(a-1,b)+b;
+ }
+ }
+ 
+ 
+ 
+ int feb(int no){
+ 
+ if(no==0||no==1){
+ return no;
+ }
+ 
+ 
+ 
+ else{
+ return feb(no-1)+feb(no-2);
+ }
+ }
+ 
+ public void SolveHanoi(int n, char A, char B, char C){
+
+     if(n>0){
+     
+     SolveHanoi(n-1,A,C,B);
+     System.out.println("Move disk"+n+"from"+A+"to"+C);
+     SolveHanoi(n-1,B,A,C);
+     }
+     else{
+     
+     }
+     
+     
+}
+
+ 
+    
+}
+
