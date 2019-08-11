@@ -1,0 +1,105 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ADTFraction;
+
+/**
+ *
+ * @author 174072r
+ */
+public class ADCTFraction {
+    
+     public static void main(String[] args){
+    ADCTFraction a1=new ADCTFraction();
+    a1.display();
+    a1.set(7,9);
+     a1.display();
+     float x=a1.value();
+     System.out.println("value="+x);
+     ADCTFraction a2=new ADCTFraction(2,3);
+     
+     ADCTFraction a3=a1.plus(a2);
+     a3.display();
+    }
+   
+    
+    private int n;
+     private int d;
+     
+     
+     public ADCTFraction(){
+         this.n=0;
+         this.d=1;
+     
+     }
+    
+
+public ADCTFraction(int a, int b){
+if(b!=0){
+this.n=a;
+this.d =1;
+}
+
+else
+{
+System.out.println("denominator connot be zero");
+}
+
+
+}
+public void set (int a, int b){
+if(b!=0){
+this.n=a;
+this.d =1;
+}
+
+else
+{
+System.out.println("denominator connot be zero");
+}
+
+
+}
+public ADCTFraction plus(ADCTFraction x){
+    ADCTFraction ans = new ADCTFraction(x.d*this.n+this.d*x.n,this.d=x.d);
+    //ans.n=x.d*this.n+this.d*x.n;
+    //ns.d=this.d=x.d;
+    return ans;
+
+}
+public ADCTFraction times(int a){
+ADCTFraction ans=new ADCTFraction();
+ans.n=this.n*a;
+ans.d=this.d;
+return ans;
+}
+
+
+public ADCTFraction times(ADCTFraction x)
+
+{
+    ADCTFraction ans=new ADCTFraction();
+    ans.n=this.n*x.n;
+    ans.d=this.d*x.d;
+    return ans;
+}
+
+public ADCTFraction reciprocal(){
+ADCTFraction ans = new ADCTFraction();
+ans.d=this.n;
+ans.n=this.d;
+return ans;
+}
+public float value(){
+    float ans=(float)this.n/this.d;
+    return ans;
+}
+public void display(){
+    System.out.println("Fraction=("+this.n+"/"+this.d+")");
+    
+}
+
+
+}
